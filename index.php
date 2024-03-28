@@ -7,43 +7,76 @@
 </head>
 
 <body>
+<form> 
 
-<?php
+    <input type="text" name="num1" placeholder="Number 1"> 
 
-         //video 8 code
-         echo 5**5;
+    <input type="text" name="num2" placeholder="Number 2" >
 
-        //video 9 code (Assignment Opreators)
-         $x = 100;
-         $x /= 20; 
-         
-         echo $x;
+    <select name="operator"> 
 
-         // video 10 code (Comparison Opreators)
-         $x = 10;
-         $y = 10;
+        <option>None</option> 
 
-         if ($x == $y) {
-                echo "True!";
-         }
-         else {
-            echo "False!";
-         }
+        <option>Add</option> 
 
-         //video 11 code (Increment and Decrement Opreators)
-         $x = 10;
-         echo $x--;
-         echo $x;
+        <option>Subtract</option> 
 
-         //video 12 code (Logical Opreators)
-         $x = 20;
-         $y = 20;
+        <option>Multiply</option> 
 
-         if ($x == $y xor 1 == 1 ) {
-                echo "True";
-         }
+        <option>Divide</option> 
 
+    </select> 
 
-?>  
+    <br> 
+
+    <button type="submit" name="submit" value="sumbit">Calculate</button> 
+
+    </form> 
+
+<p>The answer is:</p> 
+
+<h2><?php 
+
+    if (isset($_GET['submit'])) { 
+
+        $result1= $_GET['num1']; 
+
+        $result2= $_GET['num2']; 
+
+        $operator= $_GET['operator']; 
+
+        switch ($operator) { 
+
+            case "None": 
+
+            echo "You need to select a method!"; 
+
+            break; 
+
+            case"Add": 
+
+                    echo $result1+$result2; 
+
+                break; 
+
+                case"Subtract": 
+
+                    echo $result1-$result2; 
+
+                    break; 
+
+                case"Multiply": 
+
+                    echo $result1*$result2; 
+
+                    break; 
+
+                case"Divide": 
+
+                    echo $result1/$result2; 
+                }
+    }
+   ?></h2>
+
     </body>
 </html>
