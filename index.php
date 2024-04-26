@@ -9,8 +9,26 @@
 </head>
 <body>
 <?php
-    include 'includes/header.php';
+
+    require "includes/header.php";
     ?>
+ 
+
+<main>
+    <div class="wrapper-main">
+        <section calss="section-default">
+            <?php
+            if (isset($_SESSION['userId'])) {
+                echo '<h6 class="login-satus">You are logged in!</h6>';
+            }
+            else {
+                echo '<h6 class="login-satus">You are logged out!</h6>';
+            }
+            ?>
+            </section>
+        </div>
+    </main>
+
     
 <form> 
 
@@ -39,6 +57,13 @@
     </form> 
 
 <p>The answer is:</p> 
+
+    <main>
+
+    <p>You are logged out!</p>
+    <p>You are logged in!</p>
+
+    </main>
 
 <h2><?php 
 
@@ -80,6 +105,7 @@
 
                     echo $result1/$result2; 
                 }
+                require "footer.php";
     }
    ?></h2>
 
